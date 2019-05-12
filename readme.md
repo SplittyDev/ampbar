@@ -5,9 +5,6 @@
 ### Motivation
 I was looking for a good status bar to use with i3 and wasn't satisfied.
 
-Ampbar is based on Electron and the configuration is loosely similar to how
-i3blocks is configured, although imo it's easier to use.
-
 ### Features
 - Easy to set up and configure
 - Block based components like i3blocks
