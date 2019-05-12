@@ -1,0 +1,62 @@
+; Default ampbar configuration
+
+;
+; HOW TO USE
+; -------------------------------------------------------------
+; Ampbar is a block-based dock.
+; Blocks are sections in the configuration file.
+;
+; There is one standard block called [ampbar].
+; It is responsible for the ampbar container itself.
+; Here you can set things like background color, font size etc.
+;
+; You can define as many blocks as you want.
+; Ampbar tries to display all blocks if possible,
+; however, it's not guaranteed that all blocks are shown
+; if the total size of all blocks exceeds the workspace size.
+;
+
+;
+; Ampbar Block
+;
+; Properties:
+; - font			A valid font family (monospace, Inconsolata, Source Sans Pro, etc.)
+; - fontsize		A valid font size (px, pt, em, etc.)
+; - background		A valid background color (red, rgb(255,0,0), hsl(0,100%,50%), etc.)
+; - color			A valid foreground color (red, rgb(255,0,0), hsl(0,100%,50%0, etc.)
+;
+[ampbar]
+background = hsl(0,0%,10%)
+color = hsl(0,0%,90%)
+
+;
+; Example Block
+;
+; Properties:
+; - content properties (mutually exclusive) {
+; 	- script			Path to a script (~/hello.sh, etc.)
+; 	- command			Shell command (echo Hello, whoami, uname -a, etc.)
+;   - content			Static text (abc, hello world, logout, etc.)
+; }
+; - content action properties (mutually exclusive) {
+;   - script/click		Path to a script (~/hello.sh, etc.)
+;	- command/click		Shell command (echo Hello, whoami, uname -a, etc.)
+; }
+; - appearance properties (use as many as you need) {
+;   - padding			A valid padding size (px, pt, em, etc.)
+;   - background		A valid background color (red, rgb(255,0,0), hsl(0,100%,50%), etc.)
+;   - color				A valid foreground color (red, rgb(255,0,0), hsl(0,100%,50%), etc.)
+;   - borderless		A boolean option for automatic padding (true, false)
+;   - justify			A valid CSS justify-content property (flex-start, center, flex-end, etc.)
+; }
+; - layout properties (use as many as you need) {
+;   - gravity			Where the block should appear (start, center, end)
+; }
+; - other properties (use as many as you need) {
+;   - interval			How often the block should run (once, a number in milliseconds)
+; }
+;
+[example]
+gravity = center
+command = echo "Hello $(whoami)"
+interval = once

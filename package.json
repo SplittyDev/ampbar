@@ -1,0 +1,54 @@
+{
+  "name": "ampbar",
+  "productName": "ampbar",
+  "version": "0.1.0",
+  "description": "ampbar",
+  "license": "MIT",
+  "repository": "splittydev/ampbar",
+  "author": {
+    "name": "SplittyDev",
+    "email": "splittydev@protonmail.com",
+    "url": "https://quinten.cc"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "electron-packager . --out=dist --asar --overwrite"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css",
+    "core.js"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron",
+    "i3",
+    "i3status",
+    "i3blocks",
+    "statusbar",
+    "panel",
+    "dock"
+  ],
+  "dependencies": {
+    "docopt": "^0.6.2",
+    "electron-debug": "^1.0.0",
+    "electron-reload": "^1.4.0",
+    "fs-extra": "^7.0.1",
+    "ini": "^1.3.5"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^8.0.0",
+    "electron": "^1.3.3",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
