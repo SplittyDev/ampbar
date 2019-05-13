@@ -48,8 +48,12 @@ function onClosed() {
 function createMainWindow() {
 
 	// Get screen bounds
-	const {width} = electron.screen.getPrimaryDisplay().workAreaSize;
+	const {x, width} = electron.screen.getPrimaryDisplay().workAreaSize;
+
+	// Create browser window
 	const win = new electron.BrowserWindow({
+		x,
+		y: 0,
 		width,
 		height: 40,
 		id: "ampbar",
