@@ -11,9 +11,9 @@ I was looking for a good status bar to use with i3 and wasn't satisfied.
 - Powerful styling with CSS-like properties
 - Extensibility through a simple ini-based configuration format
 - Support for multiple instances with different config files
+- Live reload on configuration change
 
 ### Upcoming Features
-- Live reload when the configuration file changes
 - Option to completely override block styling with custom css
 
 ## Installation

@@ -60,6 +60,7 @@ function createMainWindow() {
 		title: "ampbar",
 		type: "dock",
 		frame: false,
+		nodeIntegration: true,
 	});
 	// win.toggleDevTools();
 

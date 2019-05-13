@@ -1,6 +1,7 @@
 // Require libraries
 const {remote} = require('electron');
-const {watchFile, readFileSync, writeFileSync, existsSync, mkdirSync, createReadStream, createWriteStream} = require('fs-extra');
+const {readFileSync, writeFileSync, existsSync, mkdirSync, createReadStream, createWriteStream} = require('fs-extra');
+const chokidar = require('chokidar');
 const {join} = require('path');
 const {homedir} = require('os');
 const cproc = require('child_process');
@@ -147,7 +148,7 @@ function applyBlockConfig(conf, key) {
 	} else if (obj.interval.match(/\d+/)) {
 		const interval = parseInt(obj.interval);
 		execCommand();
-		setInterval(execCommand, interval);
+		ampState.intervals.push(setInterval(execCommand, interval));
 	}
 
 	// Click handler
@@ -193,3 +194,22 @@ function ampUp() {
 
 // Get the ball rolling
 ampUp();
+
+// Create config file watcher
+const watcher = chokidar.watch(confFile, {
+	usePolling: false,
+});
+
+// Watch for file changes to enable live reloading
+watcher.on('change', () => {
+
+	// Clear intervals
+	ampState.intervals.forEach(intv => clearInterval(intv));
+	ampState.intervals = [];
+
+	// Clear html
+	document.querySelectorAll('.layout').forEach(elLayout => elLayout.innerHTML = '');
+
+	// Amp up
+	ampUp();
+});
