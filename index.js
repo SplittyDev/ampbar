@@ -63,6 +63,7 @@ function createMainWindow() {
 		frame: false,
 		nodeIntegration: true,
 	});
+	win.setResizable(false);
 	// win.toggleDevTools();
 
 	win.loadURL(`file://${__dirname}/index.html`);
