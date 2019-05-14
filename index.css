@@ -20,24 +20,22 @@ body * {
 	flex-flow: row;
 	align-items: center;
 	overflow: none;
+	width: 100%;
 }
 
 /* Layout for gravity: start */
 .layout--start {
 	justify-content: flex-start;
-	margin: 0 auto 0 0;
 }
 
 /* Layout for gravity: center */
 .layout--center {
 	justify-content: center;
-	margin: 0 auto;
 }
 
 /* Layout for gravity: end */
 .layout--end {
 	justify-content: flex-end;
-	margin: 0 0 0 auto;
 }
 
 /* Add spacing between blocks */
