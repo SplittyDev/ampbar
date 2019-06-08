@@ -56,7 +56,7 @@ function createMainWindow() {
 		x,
 		y: 0,
 		width,
-		height: 40,
+		height: 30,
 		id: "ampbar",
 		title: "ampbar",
 		type: "dock",

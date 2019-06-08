@@ -58,6 +58,12 @@ function applyBaseConfig(conf) {
 	// Return if no base configuration exists
 	if (!conf.ampbar) return;
 
+	// Load theme
+	const theme = readFileSync(
+		conf.ampbar.theme && conf.ampbar.theme.includes('.css')
+		? conf.ampbar.theme : `${__dirname}/themes/${conf.ampbar.theme || 'simple'}.css`
+	);
+
 	// Build style
 	const style = `
 	body {
@@ -67,9 +73,14 @@ function applyBaseConfig(conf) {
 	}
 	`;
 
+	// Clear old styles
+	for (const el of document.querySelectorAll('head>style')) {
+		el.parentNode.removeChild(el);
+	}
+
 	// Apply style
 	const elStyle = document.createElement('style');
-	elStyle.innerText = style;
+	elStyle.innerText = theme + '\n' + style;
 	document.head.appendChild(elStyle);
 }
 
@@ -93,6 +104,8 @@ function applyBlockConfig(conf, key) {
 		justify: 'center',
 		gravity: 'end',
 		borderless: 'false',
+		textalign: '',
+		grow: '',
 	}, conf[key]);
 
 	// Create element
@@ -105,6 +118,16 @@ function applyBlockConfig(conf, key) {
 		color: ${obj.color};
 		justify-content: ${obj.justify};
 	`.trim().split('\n').join('');
+
+	// Text alignment option
+	if (obj.textalign) {
+		style += `text-align: ${obj.textalign};`;
+	}
+
+	// Flex grow option
+	if (obj.grow) {
+		style += `flex-grow: ${obj.grow};`;
+	}
 
 	// Borderless option
 	if (obj.borderless === true) {

@@ -21,6 +21,18 @@
     "index.css",
     "core.js"
   ],
+  "extraFiles": [
+    "themes/*"
+  ],
+  "build": {
+    "files": [
+      "index.js",
+      "index.html",
+      "core.js",
+      "config",
+      "themes/*"
+    ]
+  },
   "keywords": [
     "electron-app",
     "electron",

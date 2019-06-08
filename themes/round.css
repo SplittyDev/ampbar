@@ -1,0 +1,68 @@
+/* General app layout */
+body {
+	margin: 0;
+	padding: 4px 4px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Ensure consistent sizing */
+body * {
+	box-sizing: border-box;
+}
+
+/* Layout for any gravity block */
+.layout {
+	flex-grow: 1;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	overflow: none;
+	width: 100%;
+}
+
+/* Layout for gravity: start */
+.layout--start {
+	justify-content: flex-start;
+}
+
+/* Layout for gravity: center */
+.layout--center {
+	justify-content: center;
+}
+
+/* Layout for gravity: end */
+.layout--end {
+	justify-content: flex-end;
+}
+
+/* Add spacing between blocks */
+.layout .block:not(:first-child) {
+	margin-left: .2rem;
+}
+.layout .block:not(:last-child) {
+	margin-right: .2rem;
+}
+
+/* Basic styling for any block */
+.block {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	border-radius: .25rem;
+	padding: .1rem .75rem;
+	height: calc(100vh - 8px);
+	overflow: hidden;
+	user-select: none;
+	cursor: default;
+}
+
+/* Blocks with click actions */
+.block.mod--action {
+	transition: all 200ms ease;
+}
+.block.mod--action:hover {
+	opacity: .85;
+}

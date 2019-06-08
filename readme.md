@@ -12,6 +12,8 @@ I was looking for a good status bar to use with i3 and wasn't satisfied.
 - Extensibility through a simple ini-based configuration format
 - Support for multiple instances with different config files
 - Live reload on configuration change
+- Support for custom css themes
+- Builtin themes (Simple, Round, Flat, Flat-Adapt)
 
 ### Upcoming Features
 - Option to completely override block styling with custom css
