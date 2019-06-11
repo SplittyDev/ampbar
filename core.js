@@ -71,6 +71,10 @@ function applyBaseConfig(conf) {
 		font-family: '${conf.ampbar.font || 'sans-serif'}', sans-serif;
 		font-size: ${conf.ampbar.fontsize || '16px'};
 	}
+	.block * {
+		font-family: '${conf.ampbar.font || 'sans-serif'}', sans-serif !important;
+		font-size: ${conf.ampbar.fontsize || '16px'} !important;
+	}
 	`;
 
 	// Clear old styles
