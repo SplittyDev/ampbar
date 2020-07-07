@@ -54,7 +54,7 @@
   "devDependencies": {
     "devtron": "^1.4.0",
     "electron-packager": "^13.1.1",
-    "electron": "^4.2.0",
+    "electron": "^9.1.0",
     "xo": "^0.16.0"
   },
   "xo": {
